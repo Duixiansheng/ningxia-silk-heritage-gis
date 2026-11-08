@@ -145,11 +145,11 @@ ningxia-silk-heritage-gis/
 
 ## 快速开始
 
-环境要求：Node.js 16+。
+环境要求：Node.js 22+（与当前锁文件中的 `@playcanvas/splat-transform` 要求一致）。
 
 ```bash
 # 安装依赖
-npm install
+npm ci
 
 # 启动开发服务器（默认 http://localhost:3000，端口被占用时 Vite 自动递增）
 npm run dev
