@@ -188,7 +188,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { Icon } from '@iconify/vue'
 import { ElInput, ElSelect, ElOption, ElPagination } from 'element-plus'
@@ -229,6 +229,11 @@ const filteredData = computed(() => {
   }
 
   return data
+})
+
+// 筛选条件变化时回到第一页，避免停留在旧页码导致结果区域空白。
+watch([searchKeyword, filterCategory, filterCity, filterPeriod, sortBy], () => {
+  currentPage.value = 1
 })
 
 // 分页
